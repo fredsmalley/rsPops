@@ -6,10 +6,11 @@
 //  Copyright (c) 2015 Song Lab. All rights reserved.
 //
 #include "rsPops.h"
-#include "tests.h"
 
 int main(int argc, const char * argv[]) {
-	test ();
+	//test ();
+	
+	cout << getenv("PWD") << "/files/" << endl;
 	
 	return 0;
 }

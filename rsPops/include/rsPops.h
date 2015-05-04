@@ -11,8 +11,11 @@
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
 
 #include "rsInfo.h"
+#include "tests.h"
+#include "functions.h"
 
 using std::cout;
 using std::endl;

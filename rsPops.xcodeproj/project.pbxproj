@@ -10,6 +10,7 @@
 		B650F2A41AF7CD2C006011A1 /* rsPops.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B650F2A21AF7CD2C006011A1 /* rsPops.cpp */; };
 		B6EA454D1AF7D090009F5A78 /* rsInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6EA454B1AF7D090009F5A78 /* rsInfo.cpp */; };
 		B6EA45521AF80291009F5A78 /* tests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6EA45501AF80291009F5A78 /* tests.cpp */; };
+		B6EA45561AF82676009F5A78 /* functions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6EA45541AF82676009F5A78 /* functions.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,6 +33,8 @@
 		B6EA454E1AF7D0CA009F5A78 /* rsInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rsInfo.h; sourceTree = "<group>"; };
 		B6EA45501AF80291009F5A78 /* tests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tests.cpp; sourceTree = "<group>"; };
 		B6EA45531AF802B8009F5A78 /* tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tests.h; sourceTree = "<group>"; };
+		B6EA45541AF82676009F5A78 /* functions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = functions.cpp; sourceTree = "<group>"; };
+		B6EA45571AF826A0009F5A78 /* functions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = functions.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,7 @@
 		B650F29E1AF7CD2C006011A1 /* include */ = {
 			isa = PBXGroup;
 			children = (
+				B6EA45571AF826A0009F5A78 /* functions.h */,
 				B6EA45531AF802B8009F5A78 /* tests.h */,
 				B6EA454E1AF7D0CA009F5A78 /* rsInfo.h */,
 				B6EA454A1AF7CFCC009F5A78 /* rsPops.h */,
@@ -94,6 +98,7 @@
 				B650F2A21AF7CD2C006011A1 /* rsPops.cpp */,
 				B6EA454B1AF7D090009F5A78 /* rsInfo.cpp */,
 				B6EA45501AF80291009F5A78 /* tests.cpp */,
+				B6EA45541AF82676009F5A78 /* functions.cpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 				B6EA454D1AF7D090009F5A78 /* rsInfo.cpp in Sources */,
 				B650F2A41AF7CD2C006011A1 /* rsPops.cpp in Sources */,
 				B6EA45521AF80291009F5A78 /* tests.cpp in Sources */,
+				B6EA45561AF82676009F5A78 /* functions.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
