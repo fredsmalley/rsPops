@@ -7,7 +7,7 @@
 export PROJECT_ROOT := $(CURDIR)
 
 # Variables
-TARGET = GeneVar
+TARGET = rsPops
 OBJS := $(patsubst src/%.cpp, obj/%.o, $(wildcard src/*.cpp))
 CXX = g++
 CXXFLAGS = -std=c++11 -I $(PROJECT_ROOT)/include
