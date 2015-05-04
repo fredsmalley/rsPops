@@ -10,13 +10,19 @@
 #define __rsPops__rsInfo__
 
 #include <string>
+#include <sstream>
 #include <vector>
 #include <map>
 #include <cstdint>
+#include <utility>
 
+using std::endl;
 using std::string;
+using std::stringstream;
+using std::scientific;
 using std::vector;
 using std::map;
+using std::pair;
 using std::make_pair;
 using std::to_string;
 
@@ -40,8 +46,7 @@ public:
 	
 	void setPValue (const float&);
 	void setP_nValue (const float&);
-	void setCancerColumn (const uint_fast16_t&, const uint_fast16_t&);
-	void addPopulation (const string&, const float&, const float&, const uint_fast16_t&, const uint_fast16_t&);
+	void addPopulation (const string&, const pair<float, float>&, const vector<uint_fast16_t>&);
 	
 	const float getPValue () const;
 	const float getP_nValue () const;

@@ -22,6 +22,44 @@ rsInfo::rsInfo (string& r, float& p, float& pn, vector< vector< uint_fast16_t > 
 	tables.insert (make_pair (pop, (table){t, p, pn}));
 }
 
+/*!   @fn       void setPValue (const float& p)
+ *    @brief    set GLN p-value
+ *
+ *    @param    p A float with the new p-value value
+ */
+void rsInfo::setPValue (const float& p) {	pValue = p;	}
+
+/*!   @fn       void setP_nValue (const float& p)
+ *    @brief    set GLN p_n-value
+ *
+ *    @param    p A float with the new p_n-value value
+ */
+void rsInfo::setP_nValue (const float& p ) {	p_nValue = p;	}
+
+
+/*!   @fn       void addPopulation (const string& pop, const pair<float, float>& p, const vector<uint_fast16_t>& v)
+ *    @brief    Add information for new Population
+ *
+ *    @param    pop A string holding the name of the new population
+ *
+ *
+ *    This method adds a new table to this rsID.
+ */
+void rsInfo::addPopulation (const string& pop, const pair<float, float>& p, const vector<uint_fast16_t>& v) {
+	vector< vector<uint_fast16_t> > t;
+	vector<uint_fast16_t> r;
+	uint_fast16_t max = (v.size () < tables.begin ()->second.table.size ()) ? v.size () : tables.begin ()->second.table.size ();
+	for (uint_fast16_t i = 0; i < max; ++i) {
+		r.push_back(tables.begin ()->second.table[i][0]);
+		r.push_back(v[i]);
+		t.push_back(r);
+		r.clear();
+	}
+
+	tables.insert (make_pair (pop, table{t, p.first, p.second}));
+}
+
+
 /*!   @fn       const float getPValue () const
  *    @brief    get trj p-value
  *
@@ -71,34 +109,39 @@ const bool rsInfo::getTable (vector< vector< uint_fast16_t > >& ret, const strin
  *    This is a simple toString method which simply writes all the information in the object neatly
  */
 const string rsInfo::toString () const {
-	string ret = rsID + ":\n";
+	stringstream _ret;
+	_ret << scientific;
+	_ret.precision(3);
 	
-	if (pValue > 0.0 || p_nValue > 0.0)
-		ret += "GLN";
-	if (pValue > 0.0)
-		ret += "\tp-value = " + to_string (pValue);
-	if (p_nValue > 0.0)
-		ret += "\tp_n-value = " + to_string (p_nValue);
+	_ret << rsID << ":" << endl;
 	
-	ret += "\n";
+	if (pValue > 0.0 || p_nValue > 0.0) {
+		_ret << "GLN";
+		if (pValue > 0.0)
+			_ret << "\tp-value = " << pValue;
+		if (p_nValue > 0.0)
+			_ret << "\tp_n-value = " << p_nValue;
 	
-	for (map<string, table>::const_iterator itr = tables.begin (); itr != tables.end (); ++itr) {
-		ret += itr->first + "\tCR\tN\n";
-		for (vector< vector< uint_fast16_t > >::const_iterator i = itr->second.table.begin (); i != itr->second.table.end (); ++i) {
-			if (i == itr->second.table.begin ())
-				ret += "SNP";
-			else if (i == ++(itr->second.table.begin ()))
-				ret += "REF";
-			else
-				ret += " ~ ";
-			for (vector< uint_fast16_t >::const_iterator j = i->begin (); j != i->end (); ++j) {
-				ret += "\t" + to_string (*j);
-			}
-			ret += "\n";
-		}
-		
-		ret += "p-value = " + to_string (itr->second.pValue) + "\tp_n-value = " + to_string (itr->second.p_nValue) + "\n";
+		_ret << endl;
 	}
 	
-	return ret;
+	for (map<string, table>::const_iterator itr = tables.begin (); itr != tables.end (); ++itr) {
+		_ret << itr->first << endl << "   \tCR\tN\n";
+		for (vector< vector< uint_fast16_t > >::const_iterator i = itr->second.table.begin (); i != itr->second.table.end (); ++i) {
+			if (i == itr->second.table.begin ())
+				_ret << "SNP";
+			else if (i == ++(itr->second.table.begin ()))
+				_ret << "REF";
+			else
+				_ret << " ~ ";
+			for (vector< uint_fast16_t >::const_iterator j = i->begin (); j != i->end (); ++j) {
+				_ret << "\t" << *j;
+			}
+			_ret << endl;
+		}
+		
+		_ret << "p-value = " << itr->second.pValue << "\tp_n-value = " << itr->second.p_nValue << endl;
+	}
+	
+	return _ret.str ();
 }
