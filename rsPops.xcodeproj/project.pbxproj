@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B650F2A41AF7CD2C006011A1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B650F2A21AF7CD2C006011A1 /* main.cpp */; };
+		B650F2A41AF7CD2C006011A1 /* rsPops.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B650F2A21AF7CD2C006011A1 /* rsPops.cpp */; };
+		B6EA454D1AF7D090009F5A78 /* rsInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6EA454B1AF7D090009F5A78 /* rsInfo.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,8 +25,10 @@
 
 /* Begin PBXFileReference section */
 		B650F2911AF7CBEE006011A1 /* rsPops */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = rsPops; sourceTree = BUILT_PRODUCTS_DIR; };
-		B650F29F1AF7CD2C006011A1 /* main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
-		B650F2A21AF7CD2C006011A1 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		B650F2A21AF7CD2C006011A1 /* rsPops.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rsPops.cpp; sourceTree = "<group>"; };
+		B6EA454A1AF7CFCC009F5A78 /* rsPops.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rsPops.h; sourceTree = "<group>"; };
+		B6EA454B1AF7D090009F5A78 /* rsInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rsInfo.cpp; sourceTree = "<group>"; };
+		B6EA454E1AF7D0CA009F5A78 /* rsInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rsInfo.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +78,8 @@
 		B650F29E1AF7CD2C006011A1 /* include */ = {
 			isa = PBXGroup;
 			children = (
-				B650F29F1AF7CD2C006011A1 /* main.h */,
+				B6EA454E1AF7D0CA009F5A78 /* rsInfo.h */,
+				B6EA454A1AF7CFCC009F5A78 /* rsPops.h */,
 			);
 			path = include;
 			sourceTree = "<group>";
@@ -83,7 +87,8 @@
 		B650F2A11AF7CD2C006011A1 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				B650F2A21AF7CD2C006011A1 /* main.cpp */,
+				B650F2A21AF7CD2C006011A1 /* rsPops.cpp */,
+				B6EA454B1AF7D090009F5A78 /* rsInfo.cpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -144,7 +149,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B650F2A41AF7CD2C006011A1 /* main.cpp in Sources */,
+				B6EA454D1AF7D090009F5A78 /* rsInfo.cpp in Sources */,
+				B650F2A41AF7CD2C006011A1 /* rsPops.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +267,7 @@
 				B650F29A1AF7CBEE006011A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
