@@ -22,6 +22,32 @@ rsInfo::rsInfo (string& r, float& p, float& pn, vector< vector< uint_fast16_t > 
 	tables.insert (make_pair (pop, (table){t, p, pn}));
 }
 
+/*!   @fn       rsInfo (const rsInfo& rs)
+ *    @brief    Copy constructor
+ *
+ *    @param    rs An rsInfo object to be copied
+ */
+rsInfo::rsInfo (const rsInfo& rs) {
+	rsID = rs.rsID;
+	pValue = rs.pValue;
+	p_nValue = rs.p_nValue;
+	
+	for (map<string, table>::const_iterator itr = rs.tables.begin (); itr != rs.tables.end (); ++itr) {
+		tables.insert (make_pair (itr->first, itr->second));
+	}
+}
+
+/*!   @fn       rsInfo ()
+ *    @brief    Default constructor
+ */
+rsInfo::rsInfo () {
+	rsID = "";
+	pValue = -1.0;
+	p_nValue = -1.0;
+}
+
+
+
 /*!   @fn       void setPValue (const float& p)
  *    @brief    set GLN p-value
  *
