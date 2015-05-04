@@ -12,6 +12,8 @@
 #include <iostream>
 #include <string>
 
+#include "rsInfo.h"
+
 using std::cout;
 using std::endl;
 using std::string;
